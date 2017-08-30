@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="adminApp">
+
+<head>
+  <title>Angular Basics</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+  <style type="text/css">
+  .user-table {
+    margin-top: 50px;
+  }
+  </style>
+</head>
+
+<body ng-controller="userCtrl">
+  <div class="container">
+    <div class="col-xs-12 user-table">
+      <form class="form-inline text-right">
+        <div class="form-group">
+          <label>Search</label>
+          <input type="text" ng-model="search" class="form-control" placeholder="search">
+        </div>
+      </form>
+      {{usersData | json}}
+      <table class="table table-bordered table-hover table-striped">
+        <thead>
+          <tr>
+            <th ng-click="predect = 'sno'; reverse = !reverse">S.No
+              <!-- <span ng-show="predect == 'sno' && reverse==false" class="glyphicon glyphicon-chevron-up"></span>
+              <span ng-show="predect == 'sno' && reverse==true" class="glyphicon glyphicon-chevron-down"></span> -->
+              <span class="glyphicon {{(predect == 'sno' && reverse==false) && 'glyphicon-chevron-up' || 'glyphicon-chevron-down'}}"></span>
+            </th>
+            <th ng-click="predect = 'fname'; reverse = !reverse">First Name
+              <span class="glyphicon {{(predect == 'fname' && reverse==false) && 'glyphicon-chevron-up' || 'glyphicon-chevron-down'}}"></span>
+            </th>
+            <th ng-click="predect = 'lname'; reverse = !reverse">Last Name
+            <span class="glyphicon glyphicon-chevron-up"></span></th>
+            <th ng-click="predect = 'age'; reverse = !reverse">Age <span class="glyphicon glyphicon-chevron-up"></span></th>
+            <th>view</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in usersData | orderBy: predect : reverse | filter: search | limitTo: 100">
+            <td ng-bind="user.sno"></td>
+            <td ng-bind="user.fname"></td>
+            <td ng-bind="user.lname"></td>
+            <td ng-bind="user.age"></td>
+            <td>
+              <span class="glyphicon glyphicon-trash text-danger" ng-click="deleteRow($index)"></span>
+              <span class="glyphicon glyphicon-edit text-primary" ng-click="editUserClick(user, $index)"></span>
+              <span class="glyphicon glyphicon-eye-open text-success" data-toggle="modal" data-target="#myModal" ng-click="viewObject(user)"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p ng-bind="myData | limitTo: nochars"></p>
+    <span ng-click="nochars = myData.length" ng-bind="(nochars == myData.length) && 'Show Less' || 'show More'"></span>
+  </div>
+  <script type="text/javascript" src="../LIBRARIES/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="../LIBRARIES/bootstrap-3.3/js/bootstrap.js"></script>
+  <script type="text/javascript" src="../LIBRARIES/angular.js"></script>
+  <script type="text/javascript">
+  angular.module('adminApp', []).controller('userCtrl', function($scope, $http) {
+
+    $scope.reverse = true;
+    $scope.nochars = 200;
+    $scope.myData = "Includes over 250 glyphs in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to Glyphicons whenever possible. Includes over 250 glyphs in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to Glyphicons whenever possible."
+
+    var scb = function(data) {
+      console.log(data.data);
+      $scope.usersData = data.data;
+    };
+    var ecb = function(data) {
+      console.log(data);
+    };
+
+    $http({
+      url: 'usersdata.json',
+      method: "GET"
+    }).then(scb, ecb);
+
+    $scope.usersdata=[
+    {
+  "sno": 1,
+  "fname": "Bujji",
+  "lname": "balaga",
+  "age": 28
+},
+{
+  "sno": 2,
+  "fname": "babu",
+  "lname": "xyz",
+  "age": 29
+},
+{
+  "sno": 3,
+  "fname": "user3",
+  "lname": "abc",
+  "age": 30
+}]
+
+  });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<html>
+   <head>
+   
+      <style>
+      
+         .animated { 
+            background-image: url('../google-logo-media-social-icon.png'); 
+            background-repeat: no-repeat;
+            background-position: left top; 
+            padding-top:195px;
+            margin-bottom:10px;
+
+            -webkit-animation-duration: 12s;
+            -ms-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            animation-duration: 12s; 
+
+            -webkit-animation-fill-mode: both; 
+            animation-fill-mode: both;
+         }
+         
+         @-webkit-keyframes xyz { 
+            0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+            40% {-webkit-transform: translateY(-30px);} 
+            60% {-webkit-transform: translateY(-15px);} 
+         } 
+         
+         @keyframes xyz { 
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+            40% {transform: translateY(-30px);} 
+            60% {transform: translateY(-15px);} 
+         }
+         
+         .bounce { 
+            -webkit-animation-name: xyz; 
+            animation-name: xyz; 
+         }
+      </style>
+      
+   </head>
+   <body>
+   
+      <div id="animated-example" class="animated bounce"></div>
+      <button onclick="myFunction()">Reload page</button>
+      
+      <script>
+         function myFunction() {
+            location.reload();
+         }
+      </script>
+      
+   </body>
+</html>

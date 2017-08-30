@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html ng-app="adminApp">
+
+<head>
+  <title>Angular Basics</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+  <style type="text/css">
+  .user-table {
+    margin-top: 50px;
+  }
+  </style>
+</head>
+
+<body ng-controller="userCtrl">
+  <div class="container">
+    <div class="col-xs-12 user-table">
+      <table class="table table-bordered table-hover table-striped">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in usersData">
+            <td ng-bind="user.sno"></td>
+            <td ng-bind="user.fname"></td>
+            <td ng-bind="user.lname"></td>
+            <td ng-bind="user.age"></td>
+            <td>
+              <span class="glyphicon glyphicon-trash text-danger" ng-click="deleteRow($index)"></span>
+              <span class="glyphicon glyphicon-edit text-primary" ng-click="editUserClick(user, $index)"></span>
+              <span class="glyphicon glyphicon-eye-open text-success" data-toggle="modal" data-target="#myModal" ng-click="viewObject(user)"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- view pobject modal -->
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">View User</h4>
+        </div>
+        <div class="modal-body">
+          No: <span ng-bind="viewObj.sno"></span>
+          <br/> Name: <span ng-bind="viewObj.fname"></span> <span ng-bind="viewObj.lname"></span>
+          <br> Age: <span ng-bind="viewObj.age"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancal</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- edit modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Edit User</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label>SNO</label>
+              <input type="text" class="form-control" ng-model="editUser.sno">
+            </div>
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" class="form-control" ng-model="editUser.fname">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" class="form-control" ng-model="editUser.lname">
+            </div>
+            <div class="form-group">
+              <label>Age</label>
+              <input type="number" class="form-control" ng-model="editUser.age">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancal</button>
+          <button type="button" class="btn btn-primary" ng-click="updateUser()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="jquery/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="angularjs/angular.min.js"></script>
+  <script type="text/javascript">
+  angular.module('adminApp', []).controller('userCtrl', function($scope) {
+
+    $scope.usersData = [{
+      sno: 1,
+      fname: 'Bujji',
+      lname: 'balaga',
+      age: 28
+    }, {
+      sno: 2,
+      fname: 'vamsi',
+      lname: 's',
+      age: 22
+    }, {
+      sno: 3,
+      fname: 'sumanth',
+      lname: 'a',
+      age: 25
+    }, {
+      sno: 4,
+      fname: 'mahesh',
+      lname: 'b',
+      age: 23
+    }, {
+      sno: 5,
+      fname: 'mahesh1',
+      lname: 'b',
+      age: 23
+    }];
+
+    //delete row.
+    $scope.deleteRow = function(index) {
+      $scope.usersData.splice(index, 1);
+    };
+
+    $scope.viewObject = function(user) {
+      //alert('view Obj');
+      $scope.viewObj = user;
+      console.log($scope.viewObj);
+    };
+
+    //edit functionality
+    $scope.editUserClick = function(user, index) {
+      $scope.editUser = angular.copy(user);
+      $scope.editInex = index;
+      // console.log('edit user::', $scope.editUser);
+      $('#editModal').modal('show');
+    };
+
+    $scope.updateUser = function() {
+      console.log('update user::', $scope.editUser);
+      $scope.usersData[$scope.editInex] = $scope.editUser;
+      $('#editModal').modal('hide');
+    };
+
+  });
+  </script>
+</body>
+
+</html>

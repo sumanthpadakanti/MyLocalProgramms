@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Menu Items</title>
+  <style type="text/css">
+  .menu {
+    list-style-type: none;
+  }
+  
+  .menu li {
+    display: inline-block;
+    background: #ccc;
+    padding: 5px 20px;
+    color: #fff;
+  }
+  .menu li.active {
+  	background: red;
+  }
+  </style>
+</head>
+
+<body>
+  <ul class="menu">
+    <li onclick="activeItem(event);" class="active item" num="1">Item1</li>
+    <li onclick="activeItem(event);" class="item" num="2">Item2</li>
+    <li onclick="activeItem(event);" class="item" num="3">Item3</li>
+    <li onclick="activeItem(event);" class="item" num="4">Item4</li>
+    <li onclick="activeItem(event);" class="item" num="5">Item5</li>
+  </ul>
+  <script type="text/javascript">
+  	 function activeItem(e) {
+  	 	for (var i = 0; i < document.getElementsByClassName('item').length; i++) {
+  	 			document.getElementsByClassName('item')[i].classList.value = "item";
+  	 	};
+  	 	e.target.classList.value = 'item active';
+  	 }
+  </script>
+</body>
+
+</html>

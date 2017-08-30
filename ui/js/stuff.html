@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Stuff</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+  var obj1 = "<div>testing</div>";
+  var obj2 = "<div>testing2</div>";
+  console.log(obj1 + obj2);
+  //A
+
+  function Sum() {
+    var string = 0;
+    for (i = 0; i < arguments.length; i++) // either arguments.length or this.arguments.length
+    {
+      // string += arguments[i]; // I doubt this works - might work
+      string = string + arguments[i]; //2 5 10
+    }
+    return string;
+  }
+
+  var result = Sum(2, 3, 5, 45); // function calling
+  console.log("Result::", result);
+
+
+  function XYZ(params) {
+    var string = '';
+    for (i = params.length - 1; i >= 0; i--) // either arguments.length or this.arguments.length
+    {
+      string += params[i]; // I doubt this works - might work
+      //string = string + params[i]; //2 5 10
+    }
+    return string;
+  }
+
+  var result1 = XYZ('VAMSI'); // function calling
+  console.log("Result1::", result1);
+
+  var arr1 = [2, 4, 7, 5, 8];
+  // var evenTotal = 0;
+  // for (var i = 0; i < arr1.length; i++) {
+  //   if (arr1[i] % 2 == 0) {
+  //     evenTotal += arr1[i];
+  //   }
+  //   console.log("evenTotal::", evenTotal);
+  // }
+var tempArray = [];
+  var test = arr1.every(function(elemant, index, xy) {
+  	var doubleval = elemant*2;
+  	tempArray.push(doubleval);
+  	return tempArray;
+      //console.log(xy[index]);
+  })
+  console.log('test',test);
+
+  </script>
+</body>
+
+</html>

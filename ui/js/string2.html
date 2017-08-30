@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Strings</title>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <script type="text/javascript">
+  var string1 = "welcome";
+  var string2 = " to JS";
+  console.log("Length of string::", string1.length); //7
+  console.log("CharAt", string1.charAt(2)); // l
+  console.log('charcodeAt', string1.charCodeAt(1)); // 101.
+  console.log('concat', string1.concat(string2)); // welcome to JS
+  console.log('concat', string1 + string2); // welcome to JS.
+  console.log('indexOgf', string1.indexOf('JS')); // -1
+  console.log('indexOgf', string1.indexOf('come')); // 3
+  var num1 = "10";
+  console.log('parseInt', parseInt(num1));
+  var name = "welcome";
+  console.log('split gives char array', name.split(''));
+  console.log('array Reverse', name.split('').reverse())
+  console.log('array to string conversion', name.split('').reverse().join(''));
+  var string3 = "This is my name and i am from hyd my job is";
+  console.log('index of::', string3.indexOf('is')) //2  
+  console.log('index of::', string3.lastIndexOf('is')) //5
+  console.log('subString::', name.substring(3, 7)); //
+  var name1 = "This is Babu and Babu is doing some work";
+  console.log('replace::', name1.replace('babu', 'bujji'));
+  console.log('replace::', name1.replace(/babu/gi, 'bujji'));
+  </script>
+</body>
+
+</html>

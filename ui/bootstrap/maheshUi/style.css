@@ -1,0 +1,86 @@
+.headder{
+	background-color: #3b5998 ;
+	width:100% ;
+	margin: 0 auto;
+	padding: 0px 0px 10px 0px;
+	display: inline-block;
+}
+body{
+	background: #e9ebee;
+	width: 100%;
+	margin: 0 auto;
+	font-family: arial;
+}
+.facebook{
+	color: #fff;
+	float: left;
+	font-size:40px;
+	margin: 30px 0px 0px 130px;
+	letter-spacing: -0.02em;
+}
+.login{
+	color: #fff;
+	margin: 0px 0px 0px 800px;
+	padding:10px 0px 0px 0px;
+	font-size: 14px;
+	letter-spacing: -0.07em;
+}
+
+.login ul{
+	display: inline-block;
+	list-style-type: none;
+	padding: 1px;	
+}
+.hcenter{
+	text-align: center;
+
+	
+}
+.homelogo{
+	text-align: center;
+	font-size: 10px;
+	width: 50%;
+	float: left;
+	margin: 50px 0px 0px 30px;
+	padding:0px 0px 0px 0px;
+
+}
+img{
+	width: 550px;
+	margin: 30px 0px 0px 30px;
+	padding:0px 0px 0px 0px;
+
+}
+
+}
+.headline {
+	
+
+.color1{
+	color:black;
+}
+span{
+	color: #fff;
+}
+.facebook{
+	font-size: 40px;
+	font-family: arial;
+	margin:1000px 0px 30px 150px;
+	padding: 100px 0px 0px 0px;
+}
+#middle{
+	width: auto;
+	
+.button input{
+	background: #2A8B37;
+	border-radius: 7px;
+	border: 1 solid;
+	padding: 10px 60px 10px 60px;
+	color: #fff;
+	font-size: 18px;
+
+}
+
+
+
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Scope</title>
+</head>
+
+<body>
+  <div id="printText"></div>
+  <button onclick="showHide()">Show/Hide</button>
+  <script type="text/javascript">
+  var title;
+
+  function func1() {
+    title = 'i am inside function1';
+    //console.log("func1::", title);
+  };
+
+  function func2() {
+    title = 'i am inside function2';
+    // console.log("func2::", title);
+  };
+
+  console.log("func:: line 23", title); //undefined
+  func2(); //calling function
+  console.log("func:: line 25", title); // i am inside function2
+  func1(); //calling function
+  console.log("func:: line 27", title); //i am inside function1
+
+  function func3() {
+    title1 = 'this is my title1';
+    console.log("inside title1::", title1); //undefined.
+  };
+
+  func3(); //undefined
+  console.log("outside title1::", title1);
+
+  function sum() {
+    for (var i = 0; i < 5; i++) {
+      if (i % 2 == 0 && i != 0) {
+        var evennum = i;
+        console.log('inside if::', evennum);
+      } else {
+        var oddnum = true;
+      }
+      console.log("inside for outside if::", evennum);
+    }
+  }
+  sum();
+
+  var text = "this is my text from jsthis is my text from jsthis is my text from jsthis is my text from jsthis is my text from jsthis is my text from jsthis is my text from jsthis is my text from jsthis is my text from jsthis is my text from jsthis is my text from jsthis is my text from js";
+
+  document.getElementById('printText').innerHTML = text;
+
+  var toggle = false;
+
+  function showHide() {
+  		toggle = !toggle;  
+    if (toggle) {
+      document.getElementById('printText').innerHTML = '';
+    } else {
+      document.getElementById('printText').innerHTML = text;
+    }
+  };
+  </script>
+</body>
+
+</html>

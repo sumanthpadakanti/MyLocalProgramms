@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<body>
+  <div ng-controller="WelcomeController">
+    {{greeting}}
+    <div id="testing">
+      <a>xyz</a>
+    </div>
+    <div ng-click="myClick()">Click</div>
+    <a href="{{myhref}}">google link</a>
+  </div>
+  <script src="https://code.angularjs.org/1.2.14/angular.js"></script>
+  <script>
+  angular.module('demo', [])
+    .controller('WelcomeController', function($scope) {
+      $scope.greeting = 'Welcome!';
+      $scope.myhref = 'http://www.google.com';
+      var x = {
+        name: 'bujji',
+        sno: 123
+      };
+      var y = angular.copy(x);
+      y.name = 'Vamsi';
+      console.log('x Object::', x);
+      console.log('y Object::', y);
+
+      $scope.myClick = function() {
+        console.log(angular.element(testing).text());
+      }
+
+      var a = {
+        name: 'bujji'
+      };
+      var b = "10";
+      console.log(a == b);
+      console.log('equals::', angular.equals(x, y));
+
+      var data = [{
+        name: 'bujji',
+        sno: 123,
+        marks: 100
+      }, {
+        name: 'mahesh',
+        sno: 124,
+        marks: 99
+      }];
+      
+      for (var i = 0; i < data.length; i++) {
+      	data[i].age = 20;
+      }
+
+      console.log(data);
+
+      var data1 = {
+        name: 'bujji',
+        sno: 123,
+        marks: 100
+      };
+
+				var resultdata = [];
+				var resultdata = new Array();
+
+
+
+				Array.isArray(resultdata); // true
+				Array.isArray(data1); // false
+
+				angular.forEach(data1, function(value, key) {
+				  resultdata.push(key + ': ' + value);
+				});
+
+				resultdata.push('age: 20')
+				console.log(resultdata);
+
+    });
+  angular.bootstrap(document, ['demo']);
+  </script>
+</body>
+
+</html>

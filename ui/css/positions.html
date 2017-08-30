@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style type="text/css">
+    .sigin-txt {
+      color: red;
+    }
+    .user-name-label, 
+    .password-label {
+      visibility: hidden;
+    }
+    .welcome {
+      color: #fff;
+      position: absolute;
+    top: 10%;
+    left: 29px;
+    }
+    .footer {
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      background: green;
+      padding:10px;
+      width: 100%;
+    }
+    .cross {
+      position: absolute;
+      top: 0;
+      color:#fff;
+      right:0;
+    }
+    .cross-input {
+          position: absolute;
+    /* color: #fff; */
+    top: 2px;
+    right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="sign-form">
+    <h1 class="sigin-txt" style="color: yellow">Sign In</h1>
+    <div class="username-div">
+      <label class="user-name-label">User Name</label>
+      <input type="text" placeholder="User Name" class="user-name-input">
+    </div>
+    <div class="password-div">
+      <label class="password-label">Password</label>
+      <span style="position:relative">
+        <input type="password" placeholder="Password" class="password-input">
+        <span class="cross-input">&copy;</span>
+      </span>
+      
+    </div>
+    <div class="password-div">
+      <label class="gender-label">Gender</label>
+      <input type="radio" name="gender" checked> Male
+      <input type="radio" name="gender"> FeMale
+    </div>
+    <div class="sign-in-btn">
+      <button>Sign In</button>
+    </div>
+    <div class="cross">X</div>
+  </form>
+   <form id="sign-form">
+    <h1 class="sigin-txt" style="color: yellow">Sign In</h1>
+    <div class="username-div">
+      <label class="user-name-label">User Name</label>
+      <input type="text" placeholder="User Name" class="user-name-input">
+    </div>
+    <div class="password-div">
+      <label class="password-label">Password</label>
+      <input type="password" placeholder="Password" class="password-input">
+    </div>
+    <div class="password-div">
+      <label class="gender-label">Gender</label>
+      <input type="radio" name="gender" checked> Male
+      <input type="radio" name="gender"> FeMale
+    </div>
+    <div class="sign-in-btn">
+      <button>Sign In</button>
+    </div>
+  </form>
+  <div class="welcome">
+    Welcome to UI Development
+  </div>
+  <div class="footer">
+    This site &copy; right belongs to Ui developer
+  </div>
+</body>
+
+</html>

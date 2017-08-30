@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JQuery Login Form</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="heading-text"></div>
+  <div class="col-sm-offset-4 col-sm-4">
+    <div class="form-group">
+      <label>User Name:</label>
+      <input type="text" class="form-control user-name" placeholder="user anme">
+    </div>
+    <div class="form-group">
+      <label>Password:</label>
+      <input type="password" class="form-control password" placeholder="Password">
+    </div>
+    <button class="btn btn-primary sign-in-btn">Sign In</button>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+
+    $('.heading-text').html('<h3>WELCOME JQUERY WORLD!</h3>');
+    //loginin form functionality.
+    $('.sign-in-btn').click(function(){
+       //var enteredUsername = document.getElementsByClassName('user-name')[0].value;
+       // var enteredUsername = $('.user-name').val();
+       // var password = $('.password').val();
+      var userObject = {
+        username: $('.user-name').val(),
+        pwd: $('.password').val()
+      };
+      //ajax call
+      console.log(userObject);
+    });
+
+    $('input').focus(function(){
+      console.log('focus');
+    });
+
+    $('input').blur(function() {
+      console.log('blur');
+      debugger;
+      if($('.user-name').val()) {
+        var username = $('.user-name').val();
+      } else {
+        alert('please enter user name');
+      }
+    });
+
+  });
+
+  window.onload = function() {
+
+  };
+
+  </script>
+</body>
+</html>

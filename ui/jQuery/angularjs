@@ -1,0 +1,81 @@
+what is an angular js?
+
+1. js frame work.
+2. client side framework.
+3. open source
+4. developed by google.
+5. good support.
+6. well tested code.
+7. its very simple.
+8. development time is less.
+9. rich internet Apps.
+10. cross-browser
+11. SPA 
+12. complex.
+13. easy performance good
+
+
+home | contactus | news | Help
+
+home.html
+<html>
+<head>load css libs</head>
+<body>
+		<header>home | contactus | news | Help</header>
+		<content>Home content</content>
+		<footer>company name &copy; rights reverved 2017</footer>
+</body>
+</html>
+
+
+
+contactUS.html
+<html>
+<head>load css libs</head>
+<body>
+		<header>home | contactus | news | Help</header>
+		<content>contact content</content>
+		<footer>company name &copy; rights reverved 2017</footer>
+		load js libs
+</body>
+</html>
+
+
+angularjs code.
+
+index.html
+<html>
+<head>load css libs</head>
+<body>
+		<header>home | contactus | news | Help</header>
+		<my-content></my-content>
+		<footer>company name &copy; rights reverved 2017</footer>
+		load js libs
+</body>
+</html>
+
+home.html
+<div>home page content</div>
+
+contactus.html
+<div>Contactus content</div>
+
+core Features:
+
+1. scope
+2. 2 waybinding
+3. mvc
+4. services
+5. factories
+6. directivs
+7. unit testing
+8. routing
+9. controllers
+10. DI
+
+
+
+
+
+
+

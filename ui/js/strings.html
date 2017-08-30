@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Strings</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1 id="heading"></h1>
+  <form class="col-sm-offset-4 col-sm-4">
+    <h4 class="sigin-txt">Palendrome Check</h4>
+    <div class="form-group">
+      <label class="user-name-label">Enter String</label>
+      <input type="text" placeholder="String" class="form-control" id="getStr">
+    </div>
+    <div class="sign-in-btn">
+      <button class="btn btn-primary" onclick="checkPalendrome()">Check</button>
+    </div>
+  </form>
+  <div class="col-sm-offset-4 col-sm-4">
+    <h4 class="text-primary">Reverse String</h4>
+    <div class="form-group">
+      <label class="user-name-label">Enter String</label>
+      <input type="text" placeholder="String" class="form-control" id="getrStr">
+    </div>
+    <div class="sign-in-btn">
+      <button class="btn btn-primary" onclick="strRevere1()">reverse</button>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <h4>Given String:: <span id="gstr"></span></h4>
+    <h4>Revese String:: <span id="rstr"></span></h4>
+  </div>
+  <script type="text/javascript" src="strings.js"></script>
+</body>
+
+</html>

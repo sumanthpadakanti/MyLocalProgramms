@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="adminApp">
+
+<head>
+  <title>Angular Basics</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+  <style type="text/css">
+  .user-table {
+    margin-top: 50px;
+  }
+  </style>
+</head>
+
+<body ng-controller="userCtrl">
+  <div class="container">
+    <h1>User Form</h1>
+    <form class="col-sm-offset-4 col-sm-4" ng-submit="submitUser()">
+      <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" class="form-control" placeholder="First Name" ng-model="firstname" required>
+      </div>
+      <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" class="form-control" placeholder="Last Name" ng-model="lastname" required>
+      </div>
+      <div class="form-group">
+        <label>Age:</label>
+        <input type="number" class="form-control" placeholder="Age" ng-model="age" required>
+      </div>
+      <input class="btn btn-primary btn-block" value="Submit" type="submit"/>
+      <input class="btn btn-primary btn-block" value="cancel">
+    </form>
+    <div class="col-xs-12 user-table">
+      <table class="table table-bordered table-hover table-striped">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in usersData">
+          		<td ng-bind="$index + 1"></td>
+          		<td ng-bind="user.fname"></td>
+          		<td ng-bind="user.lname"></td>
+          		<td ng-bind="user.age"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript" src="jquery/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="angularjs/angular.min.js"></script>
+  <script type="text/javascript" src="formCtrl.js"></script>
+</body>
+
+</html>

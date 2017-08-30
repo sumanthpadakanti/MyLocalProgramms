@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JQuery Login Form</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style type="text/css">
+    .my-menu-items li {
+      background: #fc0;
+      padding: 10px 50px;
+    }
+    .my-menu-items li.active {
+      background: red;
+    }
+  </style>
+</head>
+
+<body class="col-xs-12">
+  <ul class="list-unstyled list-inline my-menu-items">
+    <li class="active">Menu1</li>
+    <li>Menu2</li>
+    <li>Menu3</li>
+    <li>Menu4</li>
+    <li>Menu5</li>
+  </ul>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('.my-menu-items li').click(function() {
+     $('.my-menu-items li').removeClass('active');
+     $(this).addClass('active');
+    })
+  });
+  </script>
+</body>
+
+</html>

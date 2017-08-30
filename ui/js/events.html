@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Events</title>
+  <style type="text/css">
+  .my-cus {
+  	position: relative;
+  }
+  .c-box {
+    background: #ccc;
+    width: 235px;
+    padding: 1px 5px;
+    position: absolute;
+    top: 0;
+    left:95px;
+    display: none;
+  }
+  </style>
+</head>
+
+<body>
+  <button onClick="clickMe();">Click Here</button>
+  <div class="my-cus">
+    <button onmouseover="touchMe(event)" onmouseout="mouseOutHere(event)">Mouse hover</button>
+    <span class="c-box">
+  				<ul>
+  					<li>Passwor Should nbe 6 char</li>
+  					<li>At least one Uppercase and lower case</li>
+  					<li>At least one letter</li>
+  				</ul>
+  		</span>
+  </div>
+  <button onmouseout="mouseOutHere()">Mouse hover</button>
+  <script type="text/javascript">
+  function clickMe() {
+    //your code goes here.
+    alert('you clicked Button');
+
+  };
+
+  function touchMe(e) {
+  			document.getElementsByClassName('c-box')[0].style.display = 'block';
+    // alert('mouse hover function calling!');
+    // e.currentTarget.innerHTML = 'this is my hover';
+  };
+
+  function mouseOutHere(e) {
+  	document.getElementsByClassName('c-box')[0].style.display = 'none';
+    //alert('mouse out function called!');
+    //e.currentTarget.innerHTML = 'Mouse hover';
+  };
+
+
+  function sum(a, b) {
+    return a + b;
+  };
+
+  sum(4, 5);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+[{
+  "sno": 1,
+  "fname": "Bujji",
+  "lname": "balaga",
+  "age": 28
+},
+{
+  "sno": 2,
+  "fname": "babu",
+  "lname": "xyz",
+  "age": 29
+},
+{
+  "sno": 3,
+  "fname": "user3",
+  "lname": "abc",
+  "age": 30
+}]

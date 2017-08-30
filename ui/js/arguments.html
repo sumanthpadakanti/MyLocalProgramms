@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Nav Bar</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body class="container">
+  <script type="text/javascript">
+
+    var myarr = [5,2,3,4,6];
+    for (var i = 0; i < myarr.length; i++) {
+      console.log(myarr[i]);
+    }
+
+    var sum  = function () {
+      var total = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        total = total + arguments[i]; //4, 7
+      }
+      return total;
+    }
+    
+    console.log('SUM::', sum(4,3));
+    console.log('SUM1::', sum(4,3,5));
+    console.log('SUM1::', sum(4,3,5,4,5,6,7));
+  </script>
+</body>
+
+</html>

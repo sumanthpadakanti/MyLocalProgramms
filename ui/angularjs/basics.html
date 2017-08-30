@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Basics</title>
+</head>
+<body ng-app>
+	<div>
+		{{10 + 20}}
+	</div>
+	<div>
+	 {{10 + 10}}
+	</div>
+	Name: <input type="text" ng-model="name" placeholder="enter Name">
+	Entered Name: {{name}}
+	<!-- <div>
+			Name: <input type="text" placeholder="enter Name" id="inputBox" onkeydown="printName();">
+			Entered Name: <span id="myName"></span>
+	</div> -->
+ <!-- <div id="sum"></div>
+ <div onclick="addNumbers()">Sum</div> -->
+	<script type="text/javascript">
+		// function addNumbers(){
+		// 	var x = 10;
+		// 	var y = 20;
+		// 	var z = x + y;
+		// 	document.getElementById('sum').innerHTML = z;
+		// }
+
+			// function printName() {
+			// 	var inputValue = document.getElementById('inputBox').value;
+			// 	document.getElementById('myName').innerHTML = inputValue;
+			// };
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</body>
+</html>

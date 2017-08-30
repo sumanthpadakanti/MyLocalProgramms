@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Overall jS</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+  document.write('Welcome Javascript' + '<br/>');
+  document.write('<strong>This is programming language!</strong><br>');
+
+  //document.write('<strong>This is comments</strong>');
+
+  /*document.write('<strong>This is First line!</strong> <br/>');
+   document.write('<strong>This is Second line!</strong> <br/>');
+   document.write('<strong>This is Third line!</strong>'); */
+
+  var x = 'Wed Development';
+  document.write(x + '</br>');
+
+  //Variables
+  var bujji = 'testing'; // wrong declaration.wrong.
+  var bujji2 = 'testing1'; // right
+  var _bujji = 'testing3'; // right
+  var bujji_babu = "testing" // correct
+
+  var y = "Bujji said, \"Boy do i love\" ";
+  var z = 'Bujji said, "Boy do i love" ';
+
+  document.write(y + '<br>');
+  document.write(z + '<br>');
+
+  //FUNCTIONS
+  function heyStart() {
+    //code goes here
+    document.write('hey i am from function!! <br>');
+  };
+
+  heyStart(); // function calling
+
+  var heyStart = function() {
+    //code goes here
+  };
+
+  // Function with arguments or params
+
+  function secondFun(a) {
+    //code goes here
+    document.write(a);
+  };
+  secondFun('Hey i am an argument <br>'); //
+
+  function thirdFun(name1, name2) {
+    //code goes here
+    document.write(name1 + ' and ' + name2 + '<br>');
+  };
+
+  thirdFun('Bujji', 'vamsi');
+
+  function xyz() {
+    return 'this is function with return statement <br>';
+  };
+
+  document.write(xyz());
+
+  function foo1() {
+    return {
+      bar: "hello"
+    };
+  };
+
+  document.write(foo1().bar);
+
+  function foo2() {
+    return {
+      bar: "hello"
+    };
+  };
+
+  document.write(JSON.stringify(foo2()));
+
+  // function fun1() {
+  //   document.write('I am from the first function!');
+  // };
+
+  // function fun2() {
+  //   document.write('I am from the second function!');
+  // };
+
+  // function start() {
+  // 	fun1();
+  // 	fun2();
+  // };
+
+  // start();
+
+  function fun1() {
+    document.write('I am from the first function!');
+    fun2();
+  };
+
+  function fun2() {
+    document.write('I am from the second function!');
+  };
+
+  fun1();
+  </script>
+</body>
+</html>

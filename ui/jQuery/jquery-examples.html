@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JQuery Login Form</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style type="text/css">
+  html,
+  body {
+    height: 100%;
+  }
+  
+  .div1 {
+    background: red;
+    height: 150px;
+    width: 150px;
+    display: none;
+  }
+  
+  .animate-div {
+    background: red;
+    width: 100px;
+    padding: 20px;
+    border: 10px solid green;
+    margin:20px;
+  }
+  
+  .btn-groups {
+    bottom: 20px;
+    position: absolute;
+  }
+  </style>
+</head>
+
+<body class="col-xs-12">
+  <div class="div1"></div>
+  <div class="animate-div">
+    <h1>testing</h1>
+    <h1>testing</h1>
+    <h1>testing</h1>
+    <h1>testing</h1>
+  </div>
+  <br/>
+  <div class="btn-groups">
+    <button class="btn btn-primary btn-fadein">fadein</button>
+    <button class="btn btn-danger btn-fadeout">fadeOut</button>
+    <button class="btn btn-success btn-fadetoggle">fadeToggle</button>
+    <button class="btn btn-primary btn-animate">Animate</button>
+    <button class="btn btn-primary btn-stop">Stop</button>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+
+    //fadein functionality
+    $('.btn-fadein').click(function() {
+      $('.div1').fadeIn(5000);
+    });
+
+    //fadeout functionality
+    $('.btn-fadeout').click(function() {
+      $('.div1').fadeOut(5000);
+    });
+
+    //fadetoggle functionality
+    $('.btn-fadetoggle').click(function() {
+      $('.div1').fadeToggle(1000);
+    });
+
+    //animate functionality
+    $('.btn-animate').click(function() {
+      // setInterval(function(){
+      //   $('.animate-div').animate({'left': '200px'}).animate({'top':'200px'}).animate({'left':'0px'}).animate({'top':'0px'});
+      // }, 1000)
+
+      // $('.animate-div').animate({
+      //   'left': '200px'
+      // }).animate({
+      //   'top': '200px'
+      // }).animate({
+      //   'left': '0px'
+      // }).animate({
+      //   'top': '0px'
+      // }).fadeOut(1000).fadeIn(1000)
+
+      $('.animate-div').animate({
+         'left': '1000px'
+       }, 5000)
+
+    });
+    $('.btn-stop').click(function(){
+      $('.animate-div').stop();
+    });
+
+    alert('height::' + $('.animate-div').height());
+    alert('innerHeight' + $('.animate-div').innerHeight());
+    alert('outerHeight' + $('.animate-div').outerHeight());
+    alert('outerHeight true' + $('.animate-div').outerHeight(true));
+
+  });
+  </script>
+</body>
+
+</html>

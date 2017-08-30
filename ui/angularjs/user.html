@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="userApp">
+
+<head>
+  <title>angular2</title>
+</head>
+
+<body ng-controller="formCtrl">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <form class="col-sm-offset-4 col-sm-4">
+    <h3 ng-bind="heading"></h3>
+    <div class="form-group">
+      <label>First Number:</label>
+      <input type="text" class="form-control" ng-model="fname">
+    </div>
+    <div class="form-group">
+      <label>Last Number:</label>
+      <input type="text" class="form-control" ng-model="lname">
+    </div>
+    <div class="form-group">
+      <label>Age:</label>
+      <input type="number" class="form-control" ng-model="age">
+    </div>
+    <div class="form-group">
+      <label>Sex:</label>
+      <input type="radio" ng-model="sex" name="gender" value="male"> Male
+      <input type="radio" ng-model="sex" name="gender" value="female"> FeMale
+    </div>
+    <button class="btn btn-primary btn-block" ng-click="addUser()">Add User</button>
+  </form>
+  <br>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in usersList">
+        <td>{{$index  + 1}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastname}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.gender}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+  <script type="text/javascript">
+  angular.module('userApp', []).controller('formCtrl', function($scope) {
+    $scope.heading = 'User Form';
+    //add user functionality.
+    $scope.usersList = [];
+    $scope.addUser = function() {
+        var userObj = {
+          firstName: $scope.fname,
+          lastname: $scope.lname,
+          age: $scope.age,
+          gender: $scope.sex
+        };
+      $scope.usersList.push(userObj);
+      $scope.fname = '';
+      $scope.lname = '';
+      $scope.age = '';
+      console.log('user Object::', $scope.usersList);
+      //ajax
+    };
+
+    // $scope.usersList = [{
+    //   "firstName": "bujji",
+    //   "lastname": "balaga",
+    //   "age": 29,
+    //   "gender": "male"
+    // }, {
+    //   "firstName": "vamsi",
+    //   "lastname": "s",
+    //   "age": 25,
+    //   "gender": "male"
+    // }, {
+    //   "firstName": "mahesh",
+    //   "lastname": "s",
+    //   "age": 25,
+    //   "gender": "male"
+    // }];
+  });
+  </script>
+</body>
+
+</html>
