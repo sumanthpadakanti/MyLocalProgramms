@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check if the value is palindrome</title>
+  <style type="text/css">
+    div {
+        margin: 10px;
+    }
+    input {
+        margin-top: 15px;
+        margin-left: 15px;
+        border-radius: 2px solid black;
+        height: 20px;
+    }
+    button {
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <input type="text" placeholder="Enter the value" /> <br>
+    <button id="submit" onclick="checkPalindrome()">Submit</button>
+  </div>
+  <div>
+    <label id="label" class="label-color"></label>
+  </div>
+  </body>
+  <script>
+   function checkPalindrome() {
+    const inputVal = document.getElementsByTagName('input')[0].value;
+    const isPalindrome =  inputVal === inputVal.split('').reverse().join('');
+    document.getElementById('label').innerHTML = 'Entered value is' + (isPalindrome ? 'Palindrome' : 'not Palindrome');
+    document.getElementById('label').style.color = isPalindrome ? 'green' : 'red';   
+}
+  </script>
+</body>
+
+</html>
